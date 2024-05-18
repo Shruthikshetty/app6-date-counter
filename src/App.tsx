@@ -76,15 +76,17 @@ function App() {
             {setDateMessage()}
             <p>{getDate(count)}</p>
           </div>
-          <div className="flex justify-center">
-            <button
-              type="button"
-              className="text-center w-[200px]  my-2  transition text-white bg-red-500 hover:bg-red-400"
-              onClick={handleReset}
-            >
-              Reset
-            </button>
-          </div>
+          {(count != 0 || step != 1) && (
+            <div className="flex justify-center">
+              <button
+                type="button"
+                className="text-center w-[200px]  my-2  transition text-white bg-red-500 hover:bg-red-400"
+                onClick={handleReset}
+              >
+                Reset
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </>
