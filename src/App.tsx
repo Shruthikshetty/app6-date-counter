@@ -45,17 +45,33 @@ function App() {
     <>
       <div className="flex justify-center items-center h-screen">
         <div className="h-[50%] w-[70%] max-h-[300px] max-w-[600px] bg-neutral-700 rounded-md p-2">
-          <header className="text-center font-bold text-lg text-white underline">
+          <header className="text-center font-bold text-lg text-white underline mb-2">
             Date counter
           </header>
           <div className="flex justify-center items-center space-x-4">
-            <ButtonWhite onClick={handlestepSub} text="-"></ButtonWhite>
-            <span className="text-white">Step : {step}</span>
-            <ButtonWhite onClick={handlestepAdd} text="+"></ButtonWhite>
+            <label htmlFor="step-count" className="text-white">
+              Step
+            </label>
+            <input
+              title="step-count"
+              id="step-count"
+              type="range"
+              min={1}
+              max={20}
+              value={step}
+              onChange={(e) => setStep(Number(e.target.value))}
+            />
+            <span className="text-white">{step}</span>
           </div>
           <div className="flex justify-center items-center space-x-4">
             <ButtonWhite onClick={handleCountSub} text="-"></ButtonWhite>
-            <span className="text-white">Count : {count}</span>
+            <input
+              title="count-value"
+              type="text"
+              className=" px-2"
+              value={count}
+              onChange={(e) => setCount(Number(e.target.value))}
+            />
             <ButtonWhite onClick={handleCountAdd} text="+"></ButtonWhite>
           </div>
           <div className="text-center text-white my-2">

@@ -7,7 +7,7 @@ export default function ButtonWhite({
 }) {
   return (
     <button
-      className="text-neutral-400 px-4 py-2 rounded text-xl font-bold transition hover:text-white"
+      className="text-neutral-400  rounded text-2xl font-bold transition hover:text-white "
       onClick={onClick}
     >
       {text}
